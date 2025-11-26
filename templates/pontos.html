@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="space-y-4">
+  <header class="space-y-2">
+    <p class="text-xs uppercase font-semibold tracking-[0.2em] text-blue-800">
+      Mapa de monitoramento
+    </p>
+    <h1 class="text-2xl md:text-3xl font-black text-blue-950">
+      Pontos monitorados do evento
+    </h1>
+    <p class="text-sm md:text-base text-gray-700 max-w-2xl">
+      Exemplo de como o UrbanEye pode ser configurado para acompanhar diferentes áreas do Evento FILL
+      e de outros espaços públicos da cidade.
+    </p>
+  </header>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-2">
+
+    <article class="bg-white rounded-xl shadow-md p-4 flex flex-col gap-2 border-t-4 border-blue-800">
+      <h2 class="text-lg font-bold text-blue-900">Entrada Principal — Evento FILL</h2>
+      <p class="text-sm text-gray-700">
+        Ponto de maior fluxo, usado como referência principal para decisões de dispersão do público.
+      </p>
+      <p class="text-xs text-gray-500">
+        Câmera atual utilizada no protótipo.
+      </p>
+    </article>
+
+    <article class="bg-white rounded-xl shadow-md p-4 flex flex-col gap-2 border-t-4 border-yellow-400">
+      <h2 class="text-lg font-bold text-blue-900">Estande 2 — Área Interna</h2>
+      <p class="text-sm text-gray-700">
+        Área alternativa recomendada quando a entrada principal está com lotação elevada.
+      </p>
+      <p class="text-xs text-gray-500">
+        Uso destinado a conforto, segurança e melhor distribuição de fluxo.
+      </p>
+    </article>
+
+    <article class="bg-white rounded-xl shadow-md p-4 flex flex-col gap-2 border-t-4 border-green-500">
+      <h2 class="text-lg font-bold text-blue-900">Corredor Central</h2>
+      <p class="text-sm text-gray-700">
+        Ponto de passagem entre estandes, útil para medir circulação geral e detectar gargalos.
+      </p>
+      <p class="text-xs text-gray-500">
+        Pode receber uma câmera adicional em uma expansão futura.
+      </p>
+    </article>
+
+    <article class="bg-white rounded-xl shadow-md p-4 flex flex-col gap-2 border-t-4 border-blue-500">
+      <h2 class="text-lg font-bold text-blue-900">Saída do Evento</h2>
+      <p class="text-sm text-gray-700">
+        Monitoramento de dispersão ao final das atividades, apoiando encerramento organizado e seguro.
+      </p>
+    </article>
+
+    <article class="bg-white rounded-xl shadow-md p-4 flex flex-col gap-2 border-t-4 border-purple-500">
+      <h2 class="text-lg font-bold text-blue-900">Área de Alimentação</h2>
+      <p class="text-sm text-gray-700">
+        Monitoramento de filas e aglomerações em pontos de alimentação, com potencial para melhorar
+        a experiência dos visitantes.
+      </p>
+    </article>
+
+    <article class="bg-white rounded-xl shadow-md p-4 flex flex-col gap-2 border-t-4 border-red-500">
+      <h2 class="text-lg font-bold text-blue-900">Área Externa</h2>
+      <p class="text-sm text-gray-700">
+        Espaços externos podem ser monitorados para identificar pontos de espera, transporte ou filas
+        em momentos de pico.
+      </p>
+    </article>
+  </div>
+</section>
+
+{% endblock %}

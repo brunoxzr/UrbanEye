@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title if title else "UrbanEye — Monitoramento Inteligente" }}</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      background: #f4f6fb;
+    }
+  </style>
+</head>
+<body class="text-gray-900">
+
+  <!-- NAVBAR -->
+  <nav class="bg-blue-900 text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded bg-yellow-400 flex items-center justify-center font-black text-blue-900 text-lg">
+          U
+        </div>
+        <div class="leading-tight">
+          <p class="text-sm font-semibold uppercase tracking-widest">UrbanEye</p>
+          <p class="text-[11px] opacity-80">Monitoramento Inteligente de Eventos</p>
+        </div>
+      </a>
+
+      <!-- menu desktop -->
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="/" class="hover:text-yellow-300">Início</a>
+        <a href="/pontos" class="hover:text-yellow-300">Pontos Monitorados</a>
+        <a href="/sobre" class="hover:text-yellow-300">Sobre o Sistema</a>
+        <a href="/contato" class="hover:text-yellow-300">Contato</a>
+      </div>
+
+      <!-- menu mobile button -->
+      <button id="btnMenu" class="md:hidden p-2 rounded hover:bg-blue-800">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- menu mobile -->
+    <div id="menuMobile" class="md:hidden hidden border-t border-blue-800">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-2 text-sm font-medium">
+        <a href="/" class="py-1 hover:text-yellow-300">Início</a>
+        <a href="/pontos" class="py-1 hover:text-yellow-300">Pontos Monitorados</a>
+        <a href="/sobre" class="py-1 hover:text-yellow-300">Sobre o Sistema</a>
+        <a href="/contato" class="py-1 hover:text-yellow-300">Contato</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO -->
+  <main class="max-w-7xl mx-auto px-4 py-6 md:py-10">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-blue-900 text-white mt-10">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs md:text-sm">
+      <p class="font-medium">UrbanEye — Monitoramento Inteligente de Lotação em Eventos</p>
+      <p class="opacity-80">Protótipo desenvolvido para demonstração em Smart City / Hackathon</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnMenu = document.getElementById('btnMenu');
+    const menuMobile = document.getElementById('menuMobile');
+
+    if (btnMenu) {
+      btnMenu.addEventListener('click', () => {
+        menuMobile.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

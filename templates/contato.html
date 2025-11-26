@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="space-y-4">
+  <header class="space-y-2">
+    <p class="text-xs uppercase font-semibold tracking-[0.2em] text-blue-800">
+      Contato
+    </p>
+    <h1 class="text-2xl md:text-3xl font-black text-blue-950">
+      Equipe responsável
+    </h1>
+  </header>
+
+  <div class="bg-white rounded-xl shadow-md p-4 md:p-6 max-w-xl">
+    <h2 class="text-lg font-bold text-blue-900 mb-3">Informações do responsável técnico</h2>
+
+    <dl class="space-y-2 text-sm md:text-base text-gray-800">
+      <div>
+        <dt class="font-semibold">Nome:</dt>
+        <dd>Bruno Yudi Kay</dd>
+      </div>
+      <div>
+        <dt class="font-semibold">E-mail:</dt>
+        <dd>bruno.kay2304@gmail.com</dd>
+      </div>
+      <div>
+        <dt class="font-semibold">Projeto:</dt>
+        <dd>UrbanEye — Monitoramento Inteligente de Lotação em Eventos</dd>
+      </div>
+      <div>
+        <dt class="font-semibold">Cenário de demonstração:</dt>
+        <dd>Entrada principal do Evento FILL e Estande 2 (área interna).</dd>
+      </div>
+    </dl>
+
+    <p class="mt-4 text-xs md:text-sm text-gray-600">
+      Este protótipo é demonstrativo e pode ser adaptado para integração com estruturas
+      oficiais de prefeituras, secretarias e equipes de segurança e mobilidade.
+    </p>
+  </div>
+</section>
+
+{% endblock %}

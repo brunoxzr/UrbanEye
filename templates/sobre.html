@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="space-y-4">
+  <header class="space-y-2">
+    <p class="text-xs uppercase font-semibold tracking-[0.2em] text-blue-800">
+      Informações institucionais
+    </p>
+    <h1 class="text-2xl md:text-3xl font-black text-blue-950">
+      Sobre o UrbanEye
+    </h1>
+  </header>
+
+  <article class="bg-white rounded-xl shadow-md p-4 md:p-6 space-y-3">
+    <p class="text-sm md:text-base text-gray-800 leading-relaxed">
+      O UrbanEye é um painel de monitoramento de lotação desenvolvido para apoiar a gestão
+      de eventos e espaços públicos. A solução combina contagem automática de pessoas com
+      informações climáticas e regras de decisão simples, oferecendo recomendações claras
+      sobre onde é mais adequado permanecer.
+    </p>
+
+    <p class="text-sm md:text-base text-gray-800 leading-relaxed">
+      No cenário demonstrado, o foco está na entrada principal do Evento FILL e no
+      <span class="font-semibold">Estande 2</span>, utilizado como área alternativa em momentos
+      de maior fluxo. Esse mesmo conceito pode ser aplicado em terminais urbanos, praças,
+      parques, arenas e demais espaços de grande circulação.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+      <div class="bg-blue-50 border border-blue-100 rounded-lg p-3">
+        <p class="text-xs uppercase font-semibold text-blue-700 mb-1">
+          Objetivo principal
+        </p>
+        <p class="text-sm text-gray-800">
+          Apoiar decisões rápidas de organização do público, com base em dados em tempo real.
+        </p>
+      </div>
+      <div class="bg-blue-50 border border-blue-100 rounded-lg p-3">
+        <p class="text-xs uppercase font-semibold text-blue-700 mb-1">
+          Benefícios
+        </p>
+        <ul class="text-sm text-gray-800 list-disc ml-4 space-y-1">
+          <li>Melhor distribuição de fluxo</li>
+          <li>Mais conforto para visitantes</li>
+          <li>Apoio à segurança e organização</li>
+        </ul>
+      </div>
+      <div class="bg-blue-50 border border-blue-100 rounded-lg p-3">
+        <p class="text-xs uppercase font-semibold text-blue-700 mb-1">
+          Possíveis expansões
+        </p>
+        <ul class="text-sm text-gray-800 list-disc ml-4 space-y-1">
+          <li>Integração com mais câmeras</li>
+          <li>Histórico por dia e horário</li>
+          <li>Relatórios para gestão do evento</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</section>
+
+{% endblock %}
