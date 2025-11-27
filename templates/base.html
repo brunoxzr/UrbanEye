@@ -4,74 +4,106 @@
   <meta charset="UTF-8">
   <title>{{ title if title else "UrbanEye — Monitoramento Inteligente" }}</title>
 
-  <!-- Tailwind CDN -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
-      background: #f4f6fb;
+      background: #f5f7fb;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* animação menu mobile */
+    .fadeIn {
+      animation: fadeIn .25s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
+
 <body class="text-gray-900">
 
-  <!-- NAVBAR -->
-  <nav class="bg-blue-900 text-white shadow-md">
+  <!-- NAVBAR SUPREMA -->
+  <nav class="backdrop-blur-xl bg-blue-900/90 text-white shadow-lg border-b border-blue-800 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded bg-yellow-400 flex items-center justify-center font-black text-blue-900 text-lg">
+
+      <!-- LOGO -->
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-yellow-400 shadow-md flex items-center justify-center font-black text-blue-900 text-xl">
           U
         </div>
         <div class="leading-tight">
-          <p class="text-sm font-semibold uppercase tracking-widest">UrbanEye</p>
-          <p class="text-[11px] opacity-80">Monitoramento Inteligente de Eventos</p>
+          <p class="text-sm font-bold tracking-widest">URBANEYE</p>
+          <p class="text-[11px] opacity-80 -mt-[2px]">Monitoramento Inteligente</p>
         </div>
       </a>
 
-      <!-- menu desktop -->
-      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
-        <a href="/" class="hover:text-yellow-300">Início</a>
-        <a href="/pontos" class="hover:text-yellow-300">Pontos Monitorados</a>
-        <a href="/sobre" class="hover:text-yellow-300">Sobre o Sistema</a>
-        <a href="/contato" class="hover:text-yellow-300">Contato</a>
+      <!-- MENU DESKTOP -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+        <a href="/" class="hover:text-yellow-300 transition">Início</a>
+        <a href="/pontos" class="hover:text-yellow-300 transition">Pontos Monitorados</a>
+        <a href="/sobre" class="hover:text-yellow-300 transition">Sobre o Sistema</a>
+        <a href="/contato" class="hover:text-yellow-300 transition">Contato</a>
       </div>
 
-      <!-- menu mobile button -->
-      <button id="btnMenu" class="md:hidden p-2 rounded hover:bg-blue-800">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <!-- BOTÃO MOBILE -->
+      <button id="btnMenu" class="md:hidden p-2 rounded-lg hover:bg-blue-800/60 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24"
+             stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round"
                 d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
+
     </div>
 
-    <!-- menu mobile -->
-    <div id="menuMobile" class="md:hidden hidden border-t border-blue-800">
-      <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-2 text-sm font-medium">
-        <a href="/" class="py-1 hover:text-yellow-300">Início</a>
-        <a href="/pontos" class="py-1 hover:text-yellow-300">Pontos Monitorados</a>
-        <a href="/sobre" class="py-1 hover:text-yellow-300">Sobre o Sistema</a>
-        <a href="/contato" class="py-1 hover:text-yellow-300">Contato</a>
+    <!-- MENU MOBILE -->
+    <div id="menuMobile" class="hidden border-t border-blue-800 bg-blue-900/95 fadeIn">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3 text-sm font-semibold">
+        <a href="/" class="py-1 hover:text-yellow-300 transition">Início</a>
+        <a href="/pontos" class="py-1 hover:text-yellow-300 transition">Pontos Monitorados</a>
+        <a href="/sobre" class="py-1 hover:text-yellow-300 transition">Sobre o Sistema</a>
+        <a href="/contato" class="py-1 hover:text-yellow-300 transition">Contato</a>
       </div>
     </div>
   </nav>
 
+
   <!-- CONTEÚDO -->
-  <main class="max-w-7xl mx-auto px-4 py-6 md:py-10">
+  <main class="max-w-7xl mx-auto px-4 py-6 md:py-12 relative">
+
+    <!-- EFEITO RADIAL DE FUNDO -->
+    <div class="absolute inset-0 -z-10 opacity-50 blur-3xl"
+         style="background:
+           radial-gradient(circle at 20% 30%, rgba(56,189,248,.25), transparent 60%),
+           radial-gradient(circle at 80% 70%, rgba(168,85,247,.22), transparent 60%);">
+    </div>
+
     {% block content %}{% endblock %}
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-blue-900 text-white mt-10">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs md:text-sm">
-      <p class="font-medium">UrbanEye — Monitoramento Inteligente de Lotação em Eventos</p>
-      <p class="opacity-80">Protótipo desenvolvido para demonstração em Smart City / Hackathon</p>
+  <!-- FOOTER PREMIUM -->
+  <footer class="bg-blue-900 text-white mt-14 border-t border-blue-800">
+    <div class="max-w-7xl mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-2 text-xs md:text-sm">
+
+      <p class="font-semibold tracking-wide">
+        UrbanEye — Monitoramento Inteligente de Eventos
+      </p>
+
+      <p class="opacity-75">
+        Protótipo oficial para demonstrações em Smart City & Hackathons
+      </p>
     </div>
   </footer>
 
+
+  <!-- SCRIPT MENU MOBILE -->
   <script>
     const btnMenu = document.getElementById('btnMenu');
     const menuMobile = document.getElementById('menuMobile');
@@ -82,5 +114,6 @@
       });
     }
   </script>
+
 </body>
 </html>
