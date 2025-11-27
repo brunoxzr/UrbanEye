@@ -196,7 +196,7 @@ def processar_video():
                 cls = int(box.cls[0])
                 conf = float(box.conf[0])
 
-                if cls == 0 and conf >= 0.30:
+                if cls == 0 and conf >= 0.1:
                     qtd += 1
 
         pessoas_atual = qtd
