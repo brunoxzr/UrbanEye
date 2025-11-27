@@ -10,11 +10,11 @@ import numpy as np
 # =======================================================
 # CONFIGURAÇÕES DO PROJETO
 # =======================================================
-VIDEO_URL = "http://192.168.0.21:4747/video"   # DroidCam iOS (H.264 encapsulado)
+VIDEO_URL = "http://100.130.10.166:4747/video"   # DroidCam iOS (H.264 encapsulado)
 CITY_LAT = -23.304
 CITY_LON = -51.169
 
-LOCAL_ATUAL = "Entrada Principal — Evento FILL"
+LOCAL_ATUAL = "Entrada Principal — Evento FIIL"
 LOCAL_ALTERNATIVO = "Estande 2 — Área Interna"
 
 LOTACAO = {
@@ -196,7 +196,7 @@ def processar_video():
                 cls = int(box.cls[0])
                 conf = float(box.conf[0])
 
-                if cls == 0 and conf >= 0.50:
+                if cls == 0 and conf >= 0.30:
                     qtd += 1
 
         pessoas_atual = qtd
